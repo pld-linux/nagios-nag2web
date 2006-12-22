@@ -1,0 +1,31 @@
+--- nag2web-1.5.3/dbconfig.inc	2006-08-31 13:56:37.000000000 +0300
++++ nag2web-1.5.3/dbconfig.inc	2006-12-22 02:53:17.191183451 +0200
+@@ -35,7 +35,7 @@
+ $testprefix = $prefix . '/'. $INSTDIR;
+ 
+ // Path to NAGIOS htdocs directory
+-$htdocsdir='/usr/local/nagios/share';
++$htdocsdir='/usr/share/nagios';
+ 
+ // Path to languagefile
+ //$lang='./lang/lang-de.inc.php';
+@@ -43,7 +43,7 @@
+ 
+ // Full path to php binary, include php
+ //$phppath='/usr/bin/php';  # php4 
+-$phppath='/usr/bin/php5';   # php5
++$phppath='/usr/bin/php.cli';   # php5
+ 
+ // Your Personal default Settings set it you want or leave blank eg. $max_check_default='3'; or $max_check_default=''; -- Default-Settings for hosts.php and services.php
+ 
+@@ -61,8 +61,5 @@
+ 
+ // End of config variables. Do not edit behind the line
+ 
+-mysql_connect($DBHOST, $DBUSER, $DBPASS) or 
+- die("Keine Verbindung zur Datenbank");
+-mysql_select_db($DATABASE) or
+- die("Datenbank nicht gefunden");
+-?>
++mysql_connect($DBHOST, $DBUSER, $DBPASS) or die("Failed to connect to database");
++mysql_select_db($DATABASE) or die("Failed to select database");
