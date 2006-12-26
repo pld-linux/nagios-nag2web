@@ -1,4 +1,5 @@
 Summary:	PHP/MySQL web front-end for Nagios 2.x
+Summary(pl):	Oparty na PHP/MySQL interfejs WWW dla Nagiosa 2.x
 Name:		nagios-nag2web
 Version:	1.5.3
 Release:	0.4
@@ -25,6 +26,12 @@ add/remove/edit the config items. The web front-end for Nagios has the
 ability to test the config. We want to build a simple possibility to
 find and show all the features in Nagios.
 
+%description -l pl
+Oparty na PHP/MySQL interfejs WWW do konfiguracji Nagiosa 2.x. Ma
+mo¿liwo¶æ dodawania/usuwania/modyfikowania elementów konfiguracji oraz
+testowania konfiguracji. Celem projektu jest umo¿liwienie ³atwego
+znalezienia i pokazania wszystkich mo¿liwo¶ci Nagiosa.
+
 %prep
 %setup -q -n nag2web-%{version}
 mv dbconfig.{php,inc}
@@ -46,15 +53,14 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/httpd.conf
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-if [ "$1" = 1 ]; then
+%post
+if [ "$1" = "1" ]; then
 %banner %{name} -e <<'EOF'
 Quickstart:
 $ mysqladmin create nag2web
 $ mysql -e "GRANT SELECT, INSERT, UPDATE, DELETE ON nag2web.* TO 'nag2web'@'localhost' IDENTIFIED BY 'nag2web'"
 EOF
-
 fi
-
 
 %triggerin -- apache1 < 1.3.37-3, apache1-base >= 1.3.37-3
 %webapp_register apache %{_webapp}
@@ -77,5 +83,4 @@ fi
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/apache.conf
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/httpd.conf
 %attr(640,root,http) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*.php
-
 %{_appdir}
