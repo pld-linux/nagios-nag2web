@@ -1,5 +1,5 @@
 Summary:	PHP/MySQL web front-end for Nagios 2.x
-Summary(pl):	Oparty na PHP/MySQL interfejs WWW dla Nagiosa 2.x
+Summary(pl.UTF-8):   Oparty na PHP/MySQL interfejs WWW dla Nagiosa 2.x
 Name:		nagios-nag2web
 Version:	1.5.3
 Release:	0.4
@@ -26,11 +26,11 @@ add/remove/edit the config items. The web front-end for Nagios has the
 ability to test the config. We want to build a simple possibility to
 find and show all the features in Nagios.
 
-%description -l pl
+%description -l pl.UTF-8
 Oparty na PHP/MySQL interfejs WWW do konfiguracji Nagiosa 2.x. Ma
-moøliwo∂Ê dodawania/usuwania/modyfikowania elementÛw konfiguracji oraz
-testowania konfiguracji. Celem projektu jest umoøliwienie ≥atwego
-znalezienia i pokazania wszystkich moøliwo∂ci Nagiosa.
+mo≈ºliwo≈õƒá dodawania/usuwania/modyfikowania element√≥w konfiguracji oraz
+testowania konfiguracji. Celem projektu jest umo≈ºliwienie ≈Çatwego
+znalezienia i pokazania wszystkich mo≈ºliwo≈õci Nagiosa.
 
 %prep
 %setup -q -n nag2web-%{version}
