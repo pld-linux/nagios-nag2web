@@ -1,5 +1,5 @@
 Summary:	PHP/MySQL web front-end for Nagios 2.x
-Summary(pl.UTF-8):   Oparty na PHP/MySQL interfejs WWW dla Nagiosa 2.x
+Summary(pl.UTF-8):	Oparty na PHP/MySQL interfejs WWW dla Nagiosa 2.x
 Name:		nagios-nag2web
 Version:	1.5.3
 Release:	0.4
